@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Homescreen from "./screens/Homescreen.js";
 import "./App.css";
+
 import Loginscreen from "./screens/Loginscreen.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase.js";
@@ -22,7 +23,7 @@ function App() {
         );
       } else {
         // logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
 

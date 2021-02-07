@@ -1,11 +1,19 @@
 import React from "react";
 import "./ProfileScreen.css";
 import Nav from "../Nav";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUser, logout } from "../features/userSlice";
 import { auth } from "../firebase";
+
+import Plans from "../Plans.js";
 function ProfileScreen() {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut();
+    dispatch(logout());
+  };
   return (
     <div className="profileScreen">
       <Nav />
@@ -21,11 +29,13 @@ function ProfileScreen() {
             <h2>{user.email}</h2>
             <div className="prifileScreen__plans">
               <h3>Plans</h3>
+              <p>Renewal Data: 04/03/2021</p>
 
-              <button
-                onClick={() => auth.signOut()}
-                className="profileScreen__signOut"
-              >
+              <Plans title="Netflix Standard" res="1080p" />
+              <Plans title="Netflix Basic" res="480p" />
+              <Plans title="Netflix Premium" res="4K+HDR" currentPlan={true} />
+
+              <button onClick={signOut} className="profileScreen__signOut">
                 Sign Out
               </button>
             </div>

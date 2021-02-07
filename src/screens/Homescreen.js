@@ -9,8 +9,6 @@ function Homescreen() {
     <div className="homescreen">
       <Nav />
 
-      {/* Banner */}
-
       <Banner />
       <Row
         title="Netflix Originals "

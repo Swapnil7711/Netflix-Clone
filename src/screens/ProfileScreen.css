@@ -11,7 +11,6 @@
   margin-right: auto;
   padding: 8%;
   max-width: 800px;
-  /* margin-left: 30px; */
 }
 .ProfileScreen__body > h1 {
   font-size: 60px;
@@ -29,6 +28,7 @@
 }
 .profileScreen__details {
   margin-left: 30px;
+  width: 100%;
 }
 
 .profileScreen__details > h2 {
@@ -48,13 +48,20 @@
   border: none;
   cursor: pointer;
   width: 100%;
+  outline-width: 0;
 }
 
 .prifileScreen__plans {
   margin-top: 20px;
 }
-prifileScreen__plans > h3 {
-  border-bottom: 1px solid gray;
+.prifileScreen__plans > h3 {
+  border-bottom: 1px solid #282c3d;
   padding-bottom: 10px;
-  font-size: 10px;
+  font-size: 1rem;
+}
+
+.prifileScreen__plans > p {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: gray;
 }

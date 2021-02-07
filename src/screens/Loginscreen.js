@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Loginscreen.css";
-import SignUpScreen from "./SignUpScreen";
+import SignUpScreen from "./SignUpScreen.js";
 function Loginscreen() {
-  const [signIn, setSignIn] = useState("false");
+  const [signIn, setSignIn] = useState(false);
 
   return (
     <div className="loginscreen">
@@ -12,7 +12,9 @@ function Loginscreen() {
           src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt=""
         />
-        <button className="loginscreen__button">Sign In</button>
+        <button onClick={() => setSignIn(true)} className="loginscreen__button">
+          Sign In
+        </button>
 
         <div className="loginscreen__gradient"></div>
         <div className="loginscreen__body">
